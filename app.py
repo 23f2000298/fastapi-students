@@ -5,7 +5,7 @@ import pandas as pd
 app = FastAPI()
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
 
-df = pd.read_csv("students.csv")
+df = pd.read_csv("q-fastapi.csv")
 
 @app.get("/api")
 async def get_students(class_: list[str] = Query(default=None, alias="class")):
